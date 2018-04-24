@@ -1,0 +1,132 @@
+<div class="container" style="display: flexbox">
+  <header class="clearfix">
+    <div *ngIf="bejelentkezve">
+      <span>Bejelentkezve: {{userData.username}}</span>
+    </div>
+    <!--nav-->
+    <nav id="main-menu" class="navbar sticky-top navbar-expand-lg navbar-white bg-white">
+      <a class="navbar-brand" routerLink="home">
+        <i class="fas fa-home fa-2x"></i>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link active" routerLink="home">Home
+            <span class="sr-only">(current)</span>
+          </a>
+          <a class="nav-item nav-link" routerLink="profile">Profile</a>
+          <a class="nav-item nav-link" routerLink="knowledge">Knowledge</a>
+          <a class="nav-item nav-link" routerLink="restfulapi">Project</a>
+          <a class="nav-item nav-link" routerLink="messaging-service">Messaging service</a>
+          <a class="nav-item nav-link" routerLink="contact">Contact</a>
+          <div *ngIf="!bejelentkezve" class="bejelentkezesRegisztracio btn btn-group">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#loginModal" routerLink="{{ '/' }}">Login</button>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#registrateModal" routerLink="{{ '/' }}">Registrate</button>
+          </div>
+          <div *ngIf="bejelentkezve" class="kijelentkezes">
+            <button class="btn btn-danger" type="submit" (click)="logout()" routerLink="{{ '/' }}">Logout</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <router-outlet></router-outlet>
+  <go-top-button>
+    <i class="fas fa-2x fa-caret-up"></i>
+  </go-top-button>
+
+  <footer>
+    <!--social ikonok-->
+    <div class="row text-center">
+      <div class="col-12 text center">
+        <a href="https://twitter.com/?lang=en" data-toggle="tooltip" data-placement="top" title="Twitter">
+          <i class="fab fa-3x fa-twitter-square"></i>
+        </a>
+        <a href="https://www.facebook.com/" data-toggle="tooltip" data-placement="top" title="Facebook">
+          <i class="fab fa-3x fa-facebook-square"></i>
+        </a>
+        <a href="https://www.youtube.com/" data-toggle="tooltip" data-placement="bottom" title="Youtube">
+          <i class="fab fa-3x fa-youtube"></i>
+        </a>
+        <a href="https://www.instagram.com/" data-toggle="tooltip" data-placement="top" title="Instagram">
+          <i class="fab fa-3x fa-instagram"></i>
+        </a>
+        <a href="https://www.github.com/" data-toggle="tooltip" data-placement="top" title="GitHub">
+          <i class="fab fa-3x fa-github"></i>
+        </a>
+        <a href="https://www.slack.com/" data-toggle="tooltip" data-placement="bottom" title="Slack">
+          <i class="fab fa-3x fa-slack"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+</div>
+<!--LoginModal-->
+<div class="modal fade text-center" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="loginTitle">BEJELENTKEZÉS</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="loginEmail" class="col-form-label"></label>
+            <input name="loginEmail" type="text" class="form-control" id="loginEmail" placeholder="email" [(ngModel)]="userData.email">
+          </div>
+          <div class="form-group">
+            <label for="password" class="col-form-label"></label>
+            <input type="password" name="password" class="form-control" id="loginPassword" placeholder="password" [(ngModel)]="userData.password">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-primary" (click)="login()" routerLink="{{ '/home' }}">Bejelentkezem</button>
+          <p>{{Userdata | json}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--RegistrateModal-->
+<div class="modal fade text-center" id="registrateModal" tabindex="-1" role="dialog" aria-labelledby="registrateTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="rehistrateTitle">REGISZTRÁCIÓ</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="/home" method="POST">
+          <div class="form-group">
+            <label for="registrateEmail" class="col-form-label"></label>
+            <input name="regEmail" type="text" class="form-control" id="registrateEmail" placeholder="email" [(ngModel)]="userData.email">
+          </div>
+          <div class="form-group">
+            <label for="password" class="col-form-label"></label>
+            <input type="password" name="password" class="form-control" id="registratePassword" placeholder="password" [(ngModel)]="userData.password">
+          </div>
+          <div class="form-group">
+            <label for="userName" class="col-form-label"></label>
+            <input type="text" name="userName" class="form-control" id="registrateName" placeholder="username" [(ngModel)]="userData.username">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-success" (click)="register()" routerLink="{{ '/home' }}">Regisztrálok</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

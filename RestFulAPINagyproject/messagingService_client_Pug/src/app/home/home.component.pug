@@ -1,0 +1,118 @@
+main
+  section.carousel-section
+    #carouselControls.carousel.slide(data-ride='carousel')
+      .carousel-inner
+        .carousel-item.active
+          img.d-block.w-100(src='/src/app/img/slide01.jpg', alt='First slide')
+        .carousel-item
+          img.d-block.w-100(src='/src/app/img/slide02.jpg', alt='Second slide')
+          .carousel-caption.d-none.d-md-block.text-center
+            h2 Pug, the template engine
+        .carousel-item
+          img.d-block.w-100(src='/src/app/img/slide04.jpg', alt='Third slide')
+      a.carousel-control-prev(href='#carouselControls', role='button', data-slide='prev')
+        span.carousel-control-prev-icon(aria-hidden='true')
+        span.sr-only Previous
+      a.carousel-control-next(href='#carouselControls', role='button', data-slide='next')
+        span.carousel-control-next-icon(aria-hidden='true')
+        span.sr-only Next
+  section.section-two(style='background:yellow')
+    .container
+      .row
+        .col-12.text-center
+          h2 Miért készült ez a honlap?
+      .row
+        .col-md-4
+          .feature.text-center
+            i.fa.fa-5x.fa-graduation-cap
+            p
+              | A honlap arra hivatott, hogy bemutassa eddig szerzett tudásomat a backend és frontend világában.
+        .col-md-4
+          .feature.text-center
+            i.fa.fa-5x.fa-cogs
+            p
+              | Képet ad rólam, korábbi képzettségeimről, a tanfolyamon tanult rengetek új ismeret gyakorlatban való alkalmazásáról.
+        .col-md-4
+          .feature.text-center
+            i.fa.fa-5x.fa-paw
+            p ...és emellett még sok másról. 
+  section.section-three
+    .container
+      .row
+        .col-9
+        .col-3
+          i.fas.fa-3x.fa-question
+          i.fas.fa-4x.fa-question
+          i.fas.fa-5x.fa-question
+      .row
+        .col-12.tex-center
+          h2
+            | A projekt során
+            br
+            | voltak fennakadások,
+            br
+            | és időnként kifogytam
+            br
+            | az ötletekből...
+  section.section-four(style='background:orange')
+    .container
+      .row.text-center
+        .col-12
+          h1 A honlap 4 téma köré csoportosul
+      .row
+        .col-12.col-md-3
+          h3 Profil oldal
+          br
+          ul(style='list-style-type:none')
+            li
+              i.fa.fa-paw
+              |               Ki vagyok?
+            li
+              i.fa.fa-paw
+              |               Mit tudtam eddig?
+            li
+              i.fa.fa-paw
+              |               Mit fogok tudni a tanfolyam után?
+        .col-12.col-md-3
+          h3 Tudásbázis
+          br
+          ul(style='list-style-type:none')
+            li
+              i.fa.fa-paw
+              |               Mit tanultam a projekt során?
+            li
+              i.fa.fa-paw
+              |               Mi az, amit ezekből alkalmazni tudtam?
+            li
+              i.fa.fa-paw
+              |               És mik azok, amiket nem?
+        .col-12.col-md-3
+          h3 Restful API
+          br
+          ul(style='list-style-type:none')
+            li
+              i.fa.fa-paw
+              |               Mi ez a projekt?
+            li
+              i.fa.fa-paw
+              |               Miből áll össze?
+            li
+              i.fa.fa-paw
+              |               Mi a kivitelezés folyamata?
+        .col-12.col-md-3
+          h3 Chat applikáció
+          br
+          ul(style='list-style-type:none')
+            li
+              i.fa.fa-paw
+              |               Üzenetek nyilvántartása
+            li
+              i.fa.fa-paw
+              |               Új adatok bevitele
+            li
+              i.fa.fa-paw
+              |               Adatok frissítése, törlése
+  section.section-five
+    .container
+      .row
+        .col-12.tex-center

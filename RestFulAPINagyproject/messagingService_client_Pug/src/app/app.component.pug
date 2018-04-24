@@ -1,0 +1,85 @@
+.container(style='display: flexbox')
+  header.clearfix
+    div(*ngIf='bejelentkezve')
+      span Bejelentkezve: {{userData.username}}
+    // nav
+    nav#main-menu.navbar.sticky-top.navbar-expand-lg.navbar-white.bg-white
+      a.navbar-brand(routerLink='home')
+        i.fas.fa-home.fa-2x
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNavAltMarkup', aria-controls='navbarNavAltMarkup', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarNavAltMarkup.collapse.navbar-collapse.justify-content-center
+        .navbar-nav
+          a.nav-item.nav-link.active(routerLink='home')
+            | Home
+            span.sr-only (current)
+          a.nav-item.nav-link(routerLink='profile') Profile
+          a.nav-item.nav-link(routerLink='knowledge') Knowledge
+          a.nav-item.nav-link(routerLink='restfulapi') Project
+          a.nav-item.nav-link(routerLink='messaging-service') Messaging service
+          a.nav-item.nav-link(routerLink='contact') Contact
+          .bejelentkezesRegisztracio.btn.btn-group(*ngIf='!bejelentkezve')
+            button.btn.btn-primary(data-toggle='modal', data-target='#loginModal', routerLink="{{ '/' }}") Login
+            button.btn.btn-primary(data-toggle='modal', data-target='#registrateModal', routerLink="{{ '/' }}") Registrate
+          .kijelentkezes(*ngIf='bejelentkezve')
+            button.btn.btn-danger(type='submit', (click)='logout()', routerLink="{{ '/' }}") Logout
+  router-outlet
+  go-top-button
+    i.fas.fa-2x.fa-caret-up
+  footer
+    // social ikonok
+    .row.text-center
+      .col-12.text.center
+        a(href='https://twitter.com/?lang=en', data-toggle='tooltip', data-placement='top', title='Twitter')
+          i.fab.fa-3x.fa-twitter-square
+        a(href='https://www.facebook.com/', data-toggle='tooltip', data-placement='top', title='Facebook')
+          i.fab.fa-3x.fa-facebook-square
+        a(href='https://www.youtube.com/', data-toggle='tooltip', data-placement='bottom', title='Youtube')
+          i.fab.fa-3x.fa-youtube
+        a(href='https://www.instagram.com/', data-toggle='tooltip', data-placement='top', title='Instagram')
+          i.fab.fa-3x.fa-instagram
+        a(href='https://www.github.com/', data-toggle='tooltip', data-placement='top', title='GitHub')
+          i.fab.fa-3x.fa-github
+        a(href='https://www.slack.com/', data-toggle='tooltip', data-placement='bottom', title='Slack')
+          i.fab.fa-3x.fa-slack
+// LoginModal
+#loginModal.modal.fade.text-center(tabindex='-1', role='dialog', aria-labelledby='loginTitle', aria-hidden='true')
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header
+        h4#loginTitle.modal-title BEJELENTKEZÉS
+        button.close(type='button', data-dismiss='modal', aria-label='Close')
+          span(aria-hidden='true') ×
+      .modal-body
+        form
+          .form-group
+            label.col-form-label(for='loginEmail')
+            input#loginEmail.form-control(name='loginEmail', type='text', placeholder='email', [(ngModel)]='userData.email')
+          .form-group
+            label.col-form-label(for='password')
+            input#loginPassword.form-control(type='password', name='password', placeholder='password', [(ngModel)]='userData.password')
+      .modal-footer
+        .btn-group(role='group', aria-label='Basic example')
+          button.btn.btn-primary(type='button', (click)='login()', routerLink="{{ '/home' }}") Bejelentkezem
+// RegistrateModal
+#registrateModal.modal.fade.text-center(tabindex='-1', role='dialog', aria-labelledby='registrateTitle', aria-hidden='true')
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header
+        h4#rehistrateTitle.modal-title REGISZTRÁCIÓ
+        button.close(type='button', data-dismiss='modal', aria-label='Close')
+          span(aria-hidden='true') ×
+      .modal-body
+        form
+          .form-group
+            label.col-form-label(for='registrateEmail')
+            input#registrateEmail.form-control(name='regEmail', type='text', placeholder='email', [(ngModel)]='userData.email')
+          .form-group
+            label.col-form-label(for='password')
+            input#registratePassword.form-control(type='password', name='password', placeholder='password', [(ngModel)]='userData.password')
+          .form-group
+            label.col-form-label(for='userName')
+            input#registrateName.form-control(type='text', name='userName', placeholder='username', [(ngModel)]='userData.username')
+      .modal-footer
+        .btn-group(role='group', aria-label='Basic example')
+          button.btn.btn-success(type='button', (click)='register()', routerLink="{{ '/home' }}") Regisztrálok

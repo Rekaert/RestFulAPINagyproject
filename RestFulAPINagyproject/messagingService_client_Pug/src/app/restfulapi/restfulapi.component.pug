@@ -1,0 +1,120 @@
+main
+  section.title
+    .container
+      .row
+        .col-12.text-center
+          h1 Projektleírás
+  section.backend
+    .container
+      .row
+        .col-12
+          h3
+            i.fab.fa-node-js
+            |             A restful API megvalósítása mongoDB használatával
+      .row
+        .col-12.col-md-4
+          a(href='https://www.mongodb.com/', target='_blank')
+            img(src='/src/app/img/mongodb-logo.png', alt='mongodb-logo', style='width:300px;height:400px')
+        .col-8
+          p
+            i.fab.fa-whmcs
+            |             A mongoDB elindításához először parancssorban kiadom a net start mongoDB parancsot, majda a Robo 3T alkalmazáson keresztül,
+            |             amely a mongoDB-hez ad grafikus felületet, létrehoztam egy új kapcsolatot messageService néven.
+          p
+            i.fab.fa-whmcs
+            |             Ezután létrehoztam a messageService nevű adatbázist, amelyhez hozzáadtam a users és a messages adattáblákat (collection).
+          p
+            i.fab.fa-whmcs
+            |             A messageService adatbázishoz új usert adok hozzá a szükséges paraméterekkel: felhasználónév, jelszó, jogosultságo. Végül
+            |             beállítom az autentikációt, amely lehetővé teszi az adatbázishoz való hozzáférést. Parancssoron elindítom
+          p
+            i.fab.fa-whmcs
+            |             Következő lépés a restful API létrehozása Visual Studio Code-ban. Elöször git inittel lokális repot hozok létre, majd git
+            |             ignore paranccsal beállíttom, hogy a Git milyen fájlokat hagyjon figyelmen kívül.
+          p
+            i.fab.fa-whmcs
+            |             npm instal paranccsal letöltöm az alkalmazáshoz szükséges package-okat, mint express, body-parser, morgan, helmet, mongoose,
+            |             passport, majd létrehozom a package.json fájlt az npm init pranccsal. Ez a fájl tartalmazza a projektem legfontosabb
+            |             adatait.
+          br
+      .row.struct
+        .col-12
+          h4 Ezután felépítem az alkalmazás mappa és fájl struktúrájá:
+          ul(style='list-style-type:none')
+            li
+              i.fab.fa-whmcs
+              |               config mappában létrehozom a database.js fájlt
+            li
+              i.fab.fa-whmcs
+              |               controllers mappában létrehozom a user.controller.js fájlt, amely az adatmodel vezérléséért felelős kódokat tartalmazza.
+            li
+              i.fab.fa-whmcs
+              |               models mappában létrehozom a user.model.js fájlt, amelyben az adatmodel séma kerül definiálásra
+            li
+              i.fab.fa-whmcs
+              |               routes mappában létrehozom a message.route.js fájlt, amely fájl a különböző útvonalak vezérléséért felel.
+            li
+              i.fab.fa-whmcs
+              |               A server.js fájlban pedig többek között olyan metódusok kerülnek definiálásra, mint a csatlakozás a mongoDB-hez, beérkező
+              |               kérések adatcsomagjainak összefűzése, kérések naplózása, alap security beállítások. HTTP szerver indítása.
+  section.frontend
+    .container
+      .row
+        .col-12
+          h3
+            i.fab.fa-angular
+            |             A weboldal elkészítése Angularral
+      .row
+        .col-12.col-md-5
+          a(href='https://angular.io/', target='_blank')
+            img(src='/src/app/img/angular-logo.svg', alt='angulars-logo', style='width:300px;height:400px')
+        .col-7.angular-section
+          p
+            i.fas.fa-code
+            |             Első lépésként legeneráltam egy új angular projectet a ng new messagingService néven. Elöször git inittel lokális repot hozok
+            |             létre, majd git ignore paranccsal beállíttom, hogy a git milyen fájlokat hagyjon figyelmen kívül.
+          p
+            i.fas.fa-code
+            |             npm instal paranccsal letöltöm az alkalmazáshoz szükséges package-okat, mint express, body-parser, morgan, helmet, mongoose,
+            |             jquery bootstrap, majd létrehozom a package.json fájlt az npm init pranccsal. Ez a fájl tartalmazza a projektem
+            |             legfontosabb adatait.
+          p
+            i.fas.fa-code
+            |             ng eject paranccsal legenerálom a webpack.config.js fájlt és installálom a pug template engine-t npm i pug-html-loader paranccsal,
+            |             átálítom a html kiterjesztéseket pug-ra.
+          br
+      .row.struct
+        .col-12
+          h4 Ezután felépítem az alkalmazás mappa és fájl struktúrájá:
+          ul(style='list-style-type:none')
+            li
+              i.fas.fa-code
+              |               a weboldal aloldalainak megfelelő számban legenerálom a komponenseket: home, profile, knowledge, restfulapi, contact, messaging-service
+            li
+              i.fas.fa-code
+              |               index.html fájlba behúzom a bootstrapet és a jqueryt, valamint a betűtípusok beállításához a googlefonts url-jét, az ikonhasználathoz
+              |               pedig a fontawesom url-jét.
+            li
+              i.fas.fa-code
+              |               Az app.module.ts fájlban beállítom az elérési útvonalakat a navigációhoz.
+            li
+              i.fas.fa-code
+              |               Az app.component.html-ben építettem fel az egyes view-k strukturáját: fix tartalomként bekerült a header, benne a navbarral
+              |               és a footer, benne a social ikonokkal, a két tartalmi egység között kerülnek betöltődésre a routeroutlet tag
+              |               elemek által az egyes aloldalak tartalmai.
+            li
+              i.fas.fa-code
+              |               Az egyes komponensek html templétjébe sectionokban helyeztem el a tartalmi egységeket igazodva a feldatkíírás tartalmi követelményeihez.
+              |               A szöveges tartalmat css stílusokkal, animációkkal tettem színesebbé, változatosabbá.
+            li
+              i.fas.fa-code
+              |               A messaging-service.ts fájlban kerültek definiálásra a CRUD műveleteket végreható metódusok és a szükséges változók és konstansok
+              |               az ES6+ szabvány szerint.
+            li
+              i.fas.fa-code
+              |               A messaging-service.html fájlban létrehoztam egy formot az új adatsorok felviteléhez az adatbázisba. Az adatbázisból lekért
+              |               adatokat táblázatos formában az ngFor direktíva használatával jelenítettem meg.
+            li
+              i.fas.fa-code
+              |               Végül a regisztráció és login modalt az app.component.html-ben készítettem el, az app.component.ts-ben definiáltam a bejelentkezéshez
+              |               és regisztrációhoz szükséges metódusokat.

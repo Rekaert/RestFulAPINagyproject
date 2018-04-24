@@ -1,0 +1,152 @@
+main
+  section.content-list
+    .container
+      .row
+        .col-12.text-center
+          h2 A projekt során megismert technológiák, új ismeretek
+      .row.content-list
+        .col-6
+          ul(style='list-style-type:none')
+            li
+              a(href='knowledge#mongoDB ')
+                i.fas.fa-ship
+                |                 MongoDB
+            li
+              a(href='knowledge#mongoose ')
+                i.fas.fa-ship
+                |                 Mongoose
+            li
+              a(href='knowledge#passport ')
+                i.fas.fa-ship
+                |                 Passport
+            li
+              a(href='knowledge#bcrypt')
+                i.fas.fa-ship
+                |                 Bcrypt
+            li
+              a(href='knowledge#helmet')
+                i.fas.fa-ship
+                |                 Helmet
+        .col-6
+          ul(style='list-style-type:none')
+            li
+              a(href='knowledge#morgan')
+                i.fas.fa-ship
+                |                 Morgan
+            li
+              a(href='knowledge#ssl')
+                i.fas.fa-ship
+                |                 SSL
+            li
+              a(href='knowledge#session')
+                i.fas.fa-ship
+                |                 Session
+            li
+              a(href='knowledge#cookie')
+                i.fas.fa-ship
+                |                 Cookie
+            li
+              a(href='knowledge#bem')
+                i.fas.fa-ship
+                |                 BEM metodika
+  section
+    .container.content
+      .row
+        .col-12
+          h3#mongoDB
+            i.fas.fa-anchor
+            |             MongoDB:
+          p
+            | A MongoDB egy nyílt forráskódú dokumentumorientált, azaz BSON sémafüggetlen (nem relációs) tárolást lehetővé tevő
+            | adatbázis szoftver. A NoSQL adatbázisszerverek közé tartozik. Javascript alapú lekérdező nyelv, SQL lekérdezések
+            | helyett függvényhívásokkal történik a lekérdezés. A dokumentumokat JSON-szerű formátumban tárolja (BSON). A legnépszerűbb
+            | NoSQL adatbázis szoftver. A MongoDB adatbázis-kezelőben adatbázisokat hozunk létre. Az adatbázisokban gyűjteményekkel
+            | (collection) dolgozunk.A gyűjteményekbe dokumentumokat szúrunk be. A kollekciót nem kell létrehozni, az automatikusan
+            | létrejön, amikor először hivatkozunk rá.
+          h3#mongoose
+            i.fas.fa-anchor
+            |             Mongoose:
+          p
+            | A mongoDB egy Object Data Modeling (ODM) könyvtár, amely aszinkron környezetben dolgozik. Magában foglalja a beépített adattípusok
+            | kiválasztását, a validációt, az üzleti logikát is. Előre megírt metódusok által elkészíti a mongoDB-s parancsokat,
+            | a megadott paraméterek alapján.
+          h3#passport
+            i.fas.fa-anchor
+            |             Passport:
+          p
+            | Autentikációs middleware a NodeJs számára, amely rendkívül rugalmas és moduláris. A Passport minden alkalmazáshoz egyedi
+            | hitelesítési követelményeket biztosít. Az applikációk kiválaszthatják, hogy milyen egyedi autentikációs stratégiát
+            | alkalmazzanak, szükségtelen függőségek létrehozása nélkül. A Passport az autentikáció összetettsége és bonyolultsága
+            | ellenére, egyszerű kódokat biztosít az appokhoz a hitelesítés megoldására. A Passport nem követ útvonalakat és
+            | speciális adatbázis sémákat, a Passport hitelesítési kérelmet nyújt, és biztosítja a horgokat annak ellenőrzésére,
+            | hogy mi történik, ha a hitelesítés sikeres vagy sikertelen.
+          h3#bcrypt
+            i.fas.fa-anchor
+            |             Bcrypt:
+          p
+            | A bcrypt hash-algoritmust használ a jelszavak titkosításához, a Blowfish titkosítás alapján lett kifejlesztve. A hash-függvény
+            | lényege, hogy bármilyen hosszúságú adatot adott hosszúságra képezhetünk le. Például egy 7 karakteres jelszónál
+            | 2^7 lépésben forgatja meg a jelszó karaktereit. A bcrypt modul abban különbözik a beépített crypto modultól,
+            | hogy csak a bcrypt jelszavak hash-algoritmusának implementációját tartalmazza, míg a crypto számos kriptográfiai
+            | primitívet is tartalmaz, mint a hashing, szimetrikus, aszimetrikus titkosítás, kulcscsere stb. A beépített crypto
+            | tehát nem a bcrypt implementációját tartalmazza, hanem egy hasonló, de kevésbé hatékony metodikával dolgozik.
+          h3#helmet
+            i.fas.fa-anchor
+            |             Helmet:
+          p
+            | A Helmet segítségével különböző http headereket állíthatunk be az applikációnk számára. Alapvető security problémákra nyújt
+            | megoldást.
+          h3#morgan
+            i.fas.fa-anchor
+            |             Morgan:
+          p
+            | HTTP kéréseket loggoló middleware a nodeJs számára. Ha kérés érkezik a böngészőtől, akkor azt egy külön fájlban naplózza.
+          h3#ssl
+            i.fas.fa-anchor
+            |             SSL:
+          p
+            | A https egy URI-séma, amely biztonságos http kapcsolatot jelöl. Szintaktikailag megegyezik a http sémával, amelyet a HTTP
+            | protokollnál használnak, de a https nem önálló protokoll, hanem csak egy URI séma, mely azt jelzi, hogy a HTTP
+            | protokollt kell használni a szerver 443-as TCP portján a HTTP és a TCP szintek közé titkosító/autentikáló SSL
+            | vagy TLS réteg beiktatásával. Az SSL protokoll (Secure Socket Layer) a kommunikáló felek (pl. két szerver vagy
+            | web/email kliens és szerver, stb.) közötti titkosítással és hitelesítéssel történő biztonságos kommunikációra
+            | szolgál. a webböngésző és a webszerver között átvitt adatok titkosítására szolgál. A SSL használatával biztonságossá
+            | tett weboldalak címében a http: helyett a https: előtag szerepel, ezért az SSL-re sokan „HTTPS” néven hivatkoznak.
+            | Az SSL használatával magasabb fokú adatvédelem és biztonság érhető el, mint a titkosítatlan webes kapcsolatokkal.
+            | A technológia csökkenti annak a kockázatát, hogy az átvitt információk egy külső fél kezébe kerüljenek, és így
+            | lehetőséget adjanak a velük való visszaélésre.
+          h3#session
+            i.fas.fa-anchor
+            |             Session:
+          p
+            | Session (munkamenet) a számítógép-hálózatoknál két számítógép közötti kommunikáció olyan formája, mely során az egyik vagy
+            | mindkét gép átmenetileg adatokat tárol a másikról, ennek segítségével egy állapotmentes protokollon keresztül
+            | is lehet állapotokat megőrizve kommunikálni. Az eljárás legelterjedtebb alkalmazása a böngésző és webszerver
+            | közötti HTTP kapcsolat kibővítése egy speciális azonosító, a session cookie segítségével. A webszerver elküldi
+            | ezt az azonosítót a böngészőnek, amikor az először lekér egy oldalt, a saját adatbázisában pedig ehhez az azonosítóhoz
+            | kötve tárol egy bizonyos ideig különféle adatokat (például azt, hogy a felhasználó be van-e jelentkezve). A böngésző
+            | minden további oldallekérésnél visszaküldi a kapott azonosítót, amiből a szerver tudja, hogy ugyanarról a felhasználóról
+            | van szó, amelyiknek az azonosítót elküldte, és megfelelően átalakított oldalt tud neki küldeni.
+          h3#cookie
+            i.fas.fa-anchor
+            |             Cookie:
+          p
+            | A cookie egy információcsomag, amelyet a szerver küld a webböngészőnek, majd a böngésző visszaküld a szervernek minden, a
+            | szerver felé irányított kérés alkalmával. A sütiket maga a webszerver hozza létre a böngésző segítségével a felhasználó
+            | gépén, ahol azok egy elkülönített könyvtárban kerülnek tárolásra. A süti bármilyen, a kiszolgáló által meghatározott
+            | információtartalmat hordozhat. Az eljárás célja az állapot bevezetése az alapvetően állapotmentes HTTP tranzakcióba.
+            | Sütik hiányában minden egyes weboldal lekérése elszigetelt esemény, gyakorlatilag független a site többi oldalának
+            | lekérésétől. Ha a böngésző visszaküld egy sütit, a kiszolgálónak lehetősége van összekapcsolni az aktuális kérést
+            | a korábbiakkal. Leggyakrabban egy adott weboldal regisztrált felhasználóinak azonosítására, „bevásárlókosár”
+            | nyilvántartására vagy látogatók nyomon követésére használják.
+          h3#bem
+            i.fas.fa-anchor
+            |             BEM metodika:
+          p
+            | Block, Element, Modifier. A CSS osztályokat független modulokba szervezi, ezáltal megkönnyítve a fejlesztők csapatmunkáját,
+            | és felgyordítva a fejlesztői folyamatot. A BEM csak osztály attríbutumokkal használható. Célja, hogy a CSS szelektorok
+            | nevét minél informatívabbá és átláthatóbbá tegye. Minden blocknak több eleme és minden elemnek több módosítója
+            | lehet. A block a html struktúra nagyobb egységeire vonatkozik, mint header, content, sidebar, footer. A blockok
+            | a css osztályok láncolatának kiinduló pontjai. Az elem a blockon belül egy olyan összetevő, amely adott funkciót
+            | valósít meg. pl. menüpont, keresési mező. A módosító a block adott változatát reprezentálja. pl. egy keresőmező
+            | ikonnal .search_input--icon pl.: class="header_form--search"
